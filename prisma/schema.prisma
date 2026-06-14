@@ -1,0 +1,62 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+model Room {
+  id                 String        @id @default(cuid())
+  code               String        @unique @db.VarChar(8)
+  partnerNamePreview String?       @db.VarChar(80)
+  createdAt          DateTime      @default(now())
+  participants       Participant[]
+  questions          Question[]
+}
+
+model Participant {
+  id                 String    @id @default(cuid())
+  roomId             String
+  room               Room      @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  slot               String    @db.Char(1) // 'A' | 'B'
+  name               String    @db.VarChar(80)
+  message            String?   @db.Text
+  signatureBase64    String?   @db.LongText
+  messageSubmittedAt DateTime?
+  createdAt          DateTime  @default(now())
+  answers            Answer[]
+
+  @@unique([roomId, slot])
+  @@index([roomId])
+}
+
+model Question {
+  id            String   @id @default(cuid())
+  roomId        String
+  room          Room     @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  text          String   @db.VarChar(500)
+  order         Int
+  isCustom      Boolean  @default(false)
+  createdBySlot String?  @db.Char(1)
+  createdAt     DateTime @default(now())
+  answers       Answer[]
+
+  @@unique([roomId, order])
+  @@index([roomId])
+}
+
+model Answer {
+  id            String      @id @default(cuid())
+  questionId    String
+  question      Question    @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  participantId String
+  participant   Participant @relation(fields: [participantId], references: [id], onDelete: Cascade)
+  text          String      @db.Text
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+
+  @@unique([questionId, participantId])
+  @@index([participantId])
+}
