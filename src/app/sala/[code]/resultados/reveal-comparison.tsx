@@ -7,7 +7,6 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 
 export type RevealParticipant = {
@@ -71,7 +70,7 @@ export function RevealComparison({
     <main className="flex flex-1 flex-col items-center px-4 py-8 sm:py-12">
       <div className="w-full max-w-3xl space-y-6">
         <div className="text-center">
-          <Badge variant="secondary" className="mb-2">
+          <Badge variant="seal" className="mb-2">
             <Heart className="fill-primary text-primary" />
             ¡Lo lograron!
           </Badge>
@@ -113,15 +112,23 @@ export function RevealComparison({
           })}
         </div>
 
-        <Separator />
+        <div className="divider-stamps">
+          <Heart className="size-4 fill-primary/40 text-primary/40" />
+        </div>
+
+        <div className="text-center">
+          <h2 className="font-script text-3xl text-primary">Cartas para guardar</h2>
+        </div>
 
         <div className="grid gap-4 sm:grid-cols-2">
           {participants.map((p) => (
-            <Card key={p.id}>
+            <Card key={p.id} className="letter-card">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-lg">
                   <Avatar size="sm">
-                    <AvatarFallback>{getInitials(p.name)}</AvatarFallback>
+                    <AvatarFallback className="bg-seal font-heading font-semibold text-seal-foreground">
+                      {getInitials(p.name)}
+                    </AvatarFallback>
                   </Avatar>
                   Mensaje de {p.name}
                 </CardTitle>

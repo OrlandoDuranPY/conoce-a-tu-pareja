@@ -15,10 +15,10 @@ export default async function SalaLayout({
 
   return (
     <div className="flex flex-1 flex-col">
-      <header className="flex items-center justify-between px-4 py-4 sm:px-6">
+      <header className="flex items-center justify-between border-b border-dashed border-border px-4 py-4 sm:px-6">
         <Link
           href="/"
-          className="inline-flex items-center gap-1.5 font-script text-xl text-primary"
+          className="inline-flex items-center gap-1.5 font-script text-xl text-primary transition-opacity hover:opacity-80"
         >
           <Heart className="size-4 fill-primary" />
           Conoce a tu pareja

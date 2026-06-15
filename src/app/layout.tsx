@@ -35,7 +35,7 @@ export default function RootLayout({
       lang="es"
       className={`${fontHeading.variable} ${fontBody.variable} ${fontScript.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-gradient-to-br from-rose-50 via-pink-50 to-rose-100">
+      <body className="page-backdrop flex min-h-full flex-col">
         <FloatingHeartsBg />
         {children}
         <Toaster position="top-center" richColors />

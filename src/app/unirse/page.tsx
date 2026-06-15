@@ -31,9 +31,9 @@ export default async function UnirseSalaPage({
         <ArrowLeft className="size-4" />
         Volver al inicio
       </Link>
-      <Card className="w-full max-w-md">
+      <Card className="letter-card w-full max-w-md">
         <CardHeader className="text-center">
-          <div className="mx-auto mb-2 inline-flex size-12 items-center justify-center rounded-full bg-secondary text-secondary-foreground">
+          <div className="seal mx-auto mb-2 inline-flex size-12 items-center justify-center rounded-full">
             <KeyRound className="size-6" />
           </div>
           <CardTitle className="font-heading text-2xl">Unirme a una sala</CardTitle>

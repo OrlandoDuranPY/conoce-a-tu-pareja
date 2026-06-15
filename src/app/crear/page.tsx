@@ -13,9 +13,9 @@ export default function CrearSalaPage() {
         <ArrowLeft className="size-4" />
         Volver al inicio
       </Link>
-      <Card className="w-full max-w-md">
+      <Card className="letter-card w-full max-w-md">
         <CardHeader className="text-center">
-          <div className="mx-auto mb-2 inline-flex size-12 items-center justify-center rounded-full bg-secondary text-secondary-foreground">
+          <div className="seal mx-auto mb-2 inline-flex size-12 items-center justify-center rounded-full">
             <Heart className="size-6 fill-current" />
           </div>
           <CardTitle className="font-heading text-2xl">Crea su sala</CardTitle>

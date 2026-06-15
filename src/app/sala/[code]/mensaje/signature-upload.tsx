@@ -104,11 +104,11 @@ export function SignatureUpload({
         <Button
           type="button"
           variant="outline"
-          className="h-24 w-full flex-col gap-1.5 border-dashed text-muted-foreground"
+          className="h-24 w-full flex-col gap-1.5 border-dashed border-seal/40 text-muted-foreground hover:border-seal hover:bg-seal/5"
           onClick={() => inputRef.current?.click()}
           disabled={isProcessing}
         >
-          <PenLine className="size-5" />
+          <PenLine className="size-5 text-seal-foreground/70" />
           {isProcessing ? "Procesando..." : "Sube una imagen de tu firma"}
         </Button>
       )}

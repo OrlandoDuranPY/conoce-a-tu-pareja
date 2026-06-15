@@ -15,7 +15,7 @@ export function RoundInterstitial({ onContinue }: { onContinue: () => void }) {
     >
       <Card>
         <CardContent className="flex flex-col items-center gap-4 py-10 text-center">
-          <div className="inline-flex size-14 items-center justify-center rounded-full bg-accent text-accent-foreground">
+          <div className="seal inline-flex size-14 items-center justify-center rounded-full">
             <Sparkles className="size-7" />
           </div>
           <div>

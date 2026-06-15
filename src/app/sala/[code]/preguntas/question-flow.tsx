@@ -119,10 +119,10 @@ export function QuestionFlow({
               exit="exit"
               transition={{ duration: 0.25, ease: "easeInOut" }}
             >
-              <Card>
+              <Card className="letter-card">
                 <CardHeader>
                   {currentQuestion.isCustom && (
-                    <Badge variant="secondary" className="mb-1 w-fit">
+                    <Badge variant="seal" className="mb-1 w-fit">
                       {currentQuestion.createdBySlot === participantSlot
                         ? "Tu pregunta"
                         : "Pregunta de tu pareja"}

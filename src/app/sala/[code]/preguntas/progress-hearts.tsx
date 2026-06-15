@@ -13,10 +13,17 @@ export function ProgressHearts({ current, total }: { current: number; total: num
         </span>
         <span>{pct}%</span>
       </div>
-      <Progress
-        value={pct}
-        className="**:data-[slot=progress-track]:h-2.5 **:data-[slot=progress-indicator]:bg-gradient-to-r **:data-[slot=progress-indicator]:from-rose-400 **:data-[slot=progress-indicator]:to-primary"
-      />
+      <div className="relative py-1.5">
+        <Progress
+          value={pct}
+          className="**:data-[slot=progress-track]:h-2.5 **:data-[slot=progress-indicator]:bg-gradient-to-r **:data-[slot=progress-indicator]:from-rose-400 **:data-[slot=progress-indicator]:to-primary"
+        />
+        <Heart
+          aria-hidden="true"
+          className="pointer-events-none absolute top-1/2 size-4 -translate-x-1/2 -translate-y-1/2 fill-seal text-seal drop-shadow-sm transition-[left] duration-300"
+          style={{ left: `${pct}%` }}
+        />
+      </div>
     </div>
   );
 }

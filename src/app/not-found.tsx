@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 export default function NotFound() {
   return (
     <main className="flex flex-1 flex-col items-center justify-center px-4 py-16 text-center">
-      <div className="mx-auto mb-4 inline-flex size-14 items-center justify-center rounded-full bg-secondary text-secondary-foreground">
+      <div className="seal mx-auto mb-4 inline-flex size-14 items-center justify-center rounded-full">
         <HeartCrack className="size-7" />
       </div>
       <h1 className="font-heading text-3xl font-bold text-foreground">
